@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
+</head>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background: #000;
+}
+
+.background{
+    background: url("../static/images/1.jpg") no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+
+.text, .box{
+    margin-top: 40vh;
+    flex: 1;
+}
+
+.text{
+    margin-left: 10%;
+    font-weight: 300px;
+}
+
+.box{
+    margin-left: 25%;
+}
+
+.text h1{
+    font-size: 90px;
+    color: #3e4444;
+    font-weight: 500;
+}
+
+.text p{
+    font-size: 20px;
+    color: #3e4444;    ;
+    font-weight: 500;
+}
+
+.text p a{
+    color: #fff;
+    font-weight: 700;
+}
+
+.form{
+    
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+input{
+    margin: 20px 0;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #3e4444;
+    font-family: 'Raleway', sans-serif;
+}
+
+.username, .password{
+    border-bottom: 1px solid #3e4444;;
+}
+
+.btn{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.btn:hover{
+    background: #fff;
+    color: #000;
+}
+
+
+
+</style>   
+<body>
+    <main>
+        <div class="background">
+            <div class="text">
+                <h1>Login</h1>
+                <p>No Account? <a href="/signup">Sign up</a></p>
+                <p>Have a movie in mind? <a href="/search">Click here to search!</a>
+            </div>
+            <div class="box">
+                <!-- <form class="form" action="/rec_list"  method="POST"> -->
+                <form class="form" action="{{ url_for('login') }}"  method=POST>
+                    <input type="text" class="username" name = "username" placeholder="Username" required>
+                    <input type="password" class="password" name = "pass" placeholder="Password" required>
+                    <input type="hidden" name="mov1" value='5' />
+                    <input type="hidden" name="mov2" value='4' />
+                    <input type="hidden" name="mov3" value='3' />
+                    <input type="hidden" name="mov4" value='2' />
+                    <input type="hidden" name="mov5" value='1' />
+                    <button class="btn" type="submit"> Sign In </button>
+                </form>
+                {% if error %}
+                    <p class="error"><strong>Oops!</strong> {{ error }}
+                {% endif %}
+            </div>
+        </div>
+    </main>
+</body>
+    <script src="static/login.js"></script>
+</html>

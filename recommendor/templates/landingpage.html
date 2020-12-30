@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Movie Recommendation System  </title>
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landingpage_style.css') }}" />
+
+</head>
+<body>
+ <div class="header">
+  <div class="info">
+    <h1>MOVIE RECOMMENDATION SYSTEM</h1>
+    <div class="meta">
+      <h2>Scroll down to rate the genres</h2>
+    </div>
+  </div>
+</div>
+<div>
+ <nav>
+  <form action="/rec_list"  method="POST">
+ <div class="sel sel--black-panther">
+ <p>Year</p>
+  <select name="myear" class="form-select" aria-label="Default select example">
+    <option value='' disabled>Year</option>
+    <option value='0' selected="selected">--------All--------</option>
+    <option value='2010-2020'>2010-2020</option>
+    <option value='2005-2010'>2005-2010</option>
+    <option value='2000-2005'>2000-2005</option>
+    <option value='1950-2000'>1950-2000</option>
+    <option value='1900-1950'>1900-1950</option>
+  </select>
+</div>
+
+<hr class="rule">
+<form action="/rec_list"  method="POST">
+<div class="sel sel--superman">
+<p>Language</p>
+  <select name="lang" class="form-select" aria-label="Default select example">
+    <option value="" disabled>Language</option>
+    <option value="foreign">Foreign</option>
+    <option value="en" selected="selected">English</option>
+    <option value="ja">Japanese</option>
+    <option value="fr">French</option>
+    <option value="it">Italian</option>
+    <option value="de">German</option>
+    <option value="es">Spanish</option>
+    <option value="zh">Chinese</option>
+    <option value="hi">Hindi</option>
+    <option value="ko">Korean</option>
+    <option value="mr">Marathi</option>
+</select>
+
+      
+  
+</div>
+
+ </nav>
+ 
+ <div class="row">    
+
+ <div class="column">
+  <img class="img-responsive" src="static/images/action.jpg" class="rounded" style="width:100%">
+    
+    <!--img src="cinqueterre.jpg" class="rounded" alt="Cinque Terre"-->
+
+    <div class="cont">
+      <div class="stars">
+        
+        <input class="star star-5" id="star-5-1" type="radio" name="mov1" value='5' />
+        <label class="star star-5" for="star-5-1" ></label>
+        <input class="star star-4" id="star-4-1" type="radio" name="mov1" value='4'/>
+        <label class="star star-4" for="star-4-1" ></label>
+        <input class="star star-3" id="star-3-1" type="radio" name="mov1" value='3'/>
+        <label class="star star-3" for="star-3-1"></label>
+        <input class="star star-2" id="star-2-1" type="radio" name="mov1" value='2'/>
+        <label class="star star-2" for="star-2-1"></label>
+        <input class="star star-1" id="star-1-1" type="radio" name="mov1" value='1' checked="checked"/>
+        <label class="star star-1" for="star-1-1"></label>
+     
+      </div>
+    </div>
+</div>
+
+   
+
+
+ <div class="column">
+  <img class="img-responsive" src="static/images/comedy.jpg" class="rounded" style="width:100%">
+
+    <div class="cont">
+      <div class="stars">
+        
+        <input class="star star-5" id="star-5-2" type="radio" name="mov2" value='5'/>
+        <label class="star star-5" for="star-5-2"></label>
+        <input class="star star-4" id="star-4-2" type="radio" name="mov2" value='4' />
+        <label class="star star-4" for="star-4-2"></label>
+        <input class="star star-3" id="star-3-2" type="radio" name="mov2" value='3'/>
+        <label class="star star-3" for="star-3-2"></label>
+        <input class="star star-2" id="star-2-2" type="radio" name="mov2" value='2'/>
+        <label class="star star-2" for="star-2-2"></label>
+        <input class="star star-1" id="star-1-2" type="radio" name="mov2" value='1' checked="checked"/>
+        <label class="star star-1" for="star-1-2"></label>
+      
+    </div>
+    </div>
+  </div>
+
+
+
+   <div class="column">
+  <img class="img-responsive" src="static/images/drama.jpg" class="rounded" style="width:100%">
+
+
+      <div class="cont">
+        <div class="stars">
+
+          <input class="star star-5" id="star-5-3" type="radio" name="mov3" value='5'/>
+          <label class="star star-5" for="star-5-3" name="mov3" value=5></label>
+          <input class="star star-4" id="star-4-3" type="radio" name="mov3" value='4'/>
+          <label class="star star-4" for="star-4-3" name="mov3" value=4></label>
+          <input class="star star-3" id="star-3-3" type="radio" name="mov3" value='3' />
+          <label class="star star-3" for="star-3-3" name="mov3" value=3></label>
+          <input class="star star-2" id="star-2-3" type="radio" name="mov3" value='2' />
+          <label class="star star-2" for="star-2-3" name="mov3" value=2></label>
+          <input class="star star-1" id="star-1-3" type="radio" name="mov3" value='1' checked="checked"/>
+          <label class="star star-1" for="star-1-3" name="mov3" value=1></label>
+        
+      </div>
+    </div>
+</div>
+
+  
+ <div class="column">
+  <img class="img-responsive" src="static/images/horror.jpg" class="rounded"  style="width:100%">
+
+    <div class="cont">
+      <div class="stars">
+        
+        <input class="star star-5" id="star-5-4" type="radio" name="mov4" value='5'/>
+        <label class="star star-5" for="star-5-4"></label>
+        <input class="star star-4" id="star-4-4" type="radio" name="mov4" value='4' />
+        <label class="star star-4" for="star-4-4"></label>
+        <input class="star star-3" id="star-3-4" type="radio" name="mov4" value='3' />
+        <label class="star star-3" for="star-3-4"></label>
+        <input class="star star-2" id="star-2-4" type="radio" name="mov4" value='2' />
+        <label class="star star-2" for="star-2-4"></label>
+        <input class="star star-1" id="star-1-4" type="radio" name="mov4" value='1' checked="checked"/>
+        <label class="star star-1" for="star-1-4"></label>
+      
+      </div>
+    </div>
+</div>
+
+
+
+ <div class="column">
+  <img class="img-responsive" src="static/images/sci-fi.jpg" class="rounded" style="width:100%">
+
+    <div class="cont">
+      <div class="stars">
+        
+        <input class="star star-5" id="star-5-5" type="radio" name="mov5" value='5'/>
+        <label class="star star-5" for="star-5-5"></label>
+        <input class="star star-4" id="star-4-5" type="radio" name="mov5" value='4' />
+        <label class="star star-4" for="star-4-5"></label>
+        <input class="star star-3" id="star-3-5" type="radio" name="mov5" value='3' />
+        <label class="star star-3" for="star-3-5"></label>
+        <input class="star star-2" id="star-2-5" type="radio" name="mov5" value='2' />
+        <label class="star star-2" for="star-2-5"></label>
+        <input class="star star-1" id="star-1-5" type="radio" name="mov5" value='1' checked="checked"/>
+        <label class="star star-1" for="star-1-5"></label>
+      
+      </div>
+    </div>
+</div>
+     
+   
+
+
+     </div>
+    
+    <div class="container">
+  <div class="center">
+      <button class="btn btn-primary" type="submit" value="Submit">Submit</button>  
+      
+    </form>
+  </div>
+</div>  
+</div>
+
+
+</body>
+
+<script>
+let button = document.querySelector('.button');
+let buttonText = document.querySelector('.tick');
+
+const tickMark = "<svg width=\"58\" height=\"45\" viewBox=\"0 0 58 45\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#fff\" fill-rule=\"nonzero\" d=\"M19.11 44.64L.27 25.81l5.66-5.66 13.18 13.18L52.07.38l5.65 5.65\"/></svg>";
+
+buttonText.innerHTML = "Submit";
+
+button.addEventListener('click', function() {
+
+  if (buttonText.innerHTML !== "Submit") {
+    buttonText.innerHTML = "Submit";
+  } else if (buttonText.innerHTML === "Submit") {
+    buttonText.innerHTML = tickMark;
+  }
+  this.classList.toggle('button__circle');
+});
+</script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+</html>

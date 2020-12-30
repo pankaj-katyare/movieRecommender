@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bustling-folio-297909",
+  "private_key_id": "dc4572ba5eff88c45fbc37d08b433217e5c59fb1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC66EB205LU3WnZ\nrFCAz7MkkFlFgKQwo4L9SgNWr1Y3F3xb5fdOCMdIVwnXYcgYauE/BWSMiSy11fSW\no9Ltw+CVDM/cDktaztmh/X4TNIyGCwJIdq17HH5hHFmurvSujRiTTwkC6ogdHvE5\nRZczEnaysYliuf7On1w6m4AzOibn81JaSUUfhx3L0WMMgQy3JZgdPXsBs5rHg5uK\nP/N5niMJYLNmt9kZV11S0Tf2OvEITLSbFfioEuwSBKlGRP9b4M5n8oQO6+Q/kc8S\nBjukyJXyPljAKTx1AC+GIyzoloAYX9K9QbzKutOsr4ow5ClERR1C+a/2wbHh16Cl\neJCghUirAgMBAAECggEAUAipqfg49JuG+uWVZ0MJA8wn3eIS7Jznt0wdF95mvZp5\n7uQPPMP3iZtzpF3Dj+kcYJ8PijonAgoG/QZTiOqKXWiqDSG11MGkYYApn1GuJqvK\nI3tmF8SAvValdG6IacITVujOBAinlkispIiPERiD6UqqeLMKUDHfDV2OzODGziUf\n9atxXgbaymelk6llEylMTiitpTr6ijeC5ICdvp6trFH2sM3tIf5MBLlISVG+OcUv\ncqDiH606wjp5D1GnMgZAVrndzAoxEQeIwBSc8yW/HxhVRGFBZVtvRx5dYS4q3pAo\naA6bJv3HSPRVbCAYOYm7Aam6kjHiqquZFBGTbeSF0QKBgQDvOVWq6dizDCuoCp1g\n65q89QPrOO4Yrl/Xkqg0XspJ3VhB3E3Icj1g9beKFHrOcXCebghRx2H/bNIYOjsj\n0x5LzpXehmpjGrVdDLSQDCXf0KWWa73VxxX6R4it59WKS5UjeshePbNTGw+C7fcN\n7qqAz+mj+3lrttI2OR969o124wKBgQDIA7Oi4XiWeDctWAgirBglyriZ3YKPvlE6\n7m3mbdPo1caI2bDdMcQiqwxCm1ps3iWg/gGmLeY44rURaxrdsvumLSajPDmcQz37\nvn/Bi/eqT2VS94pRl5ETtwWDxy/VIFDIfXV/4ze9FGgF3uLQR3lPRVy6G/2nmT5u\nvbtBLqvJmQKBgQC6qw+ZDV6F4FJUjuvdTBtzpPEI5GSOJ8sryQmty+Wnm6uZwNGF\nPvd8KGCuw2pMmyJYzd16Cs4CZSTPuOia/MtgNfSmLlbnvFiXIinnWUNYkVQUuz/n\nh7EzmgwiP4xWnMHkbJPbTeQXTj9dWFj2qyyq1RIoXjuR/JetrgdNiQQ8JwKBgENz\nZB/4s2bi8ZCcEFpI+Pe9rpVM6xu4jcI2597+iKkLdqFt8EQX5VHfpwnLRCpUnBH3\ntuyoq+vhIDjYir3a/xxiO5Zu1+rHjl6YNpM5tXK8xam+CupLF8SzQuvWv127QSLr\nlDVllcVw3Ueli427nMBL3uJwUBE2D6Te3Qg1Sf95AoGAGqLoESFFV174ZRltlcGD\nre/fwjioLMO+IqQ5lrVDGjBGtK5xZi0nIi4USukrMAgky+SQSNgcHlIXrvTd9iCU\ngACMwDttF6NdP8gncbKcrIc1CcVl5oMztXWBNgTdqAT85BRUVop9OWCwETPjEKRn\n3NpAFIqdT+6znvQMdxkQMfg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mrs-534@bustling-folio-297909.iam.gserviceaccount.com",
+  "client_id": "100103006397305362424",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mrs-534%40bustling-folio-297909.iam.gserviceaccount.com"
+}

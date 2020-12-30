@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!--link rel="stylesheet" href="static/css/main.css"-->
+<title>Movie Recommendor</title>
+<style>
+  body, html {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url("static/background3.gif");
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .details {
+      margin: 0 auto;
+      width: 600px;
+      justify-content:center;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
+.box{
+  width: 480px;
+  height: 620px;
+  padding: 2px;
+  background-color:#faeaeb85;
+  margin: 0;	
+  
+}
+@media screen and (max-width: 480px) {
+    .box {
+      width: 100%;
+    }
+  }
+
+.box.ontop {
+  position: relative;
+  top: 4.7em;
+}
+
+.h1{
+  color:crimson;
+}
+
+
+ .container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+    
+
+/*
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+*/
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+
+.center {
+  margin: auto;
+  text-align: center;
+  
+  
+}
+
+
+/*
+ #button {
+     line-height: 12px;
+     width: 70px;
+     font-size: 10pt;
+     font-family: tahoma;
+     margin-top: 1px;
+     margin-right: 2px;   
+     position: absolute;
+     top: 0;
+     right: 0;
+     
+ }
+ */
+
+.myButton {
+    
+    display:block;
+    float:right;
+    color: white;
+    text-align:center;
+    }
+
+
+</style>
+</head>
+<body>
+
+<nav class="navbar sticky-top navbar-light bg-light navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a href="/logout" class="myButton"><button type="button" class="btn btn-danger">Logout</button></a>
+    <form class="d-flex" autocomplete="off" action="{{url_for('recommend')}}" method="POST">
+        <input class="autocomplete" class="form-control me-2" type="text" name="myTitle" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" value="submit">Search</button>
+      </form>
+  </div>
+</nav>
+
+<center>
+
+
+  
+  <h1 style="color:crimson;">Movie Recommendation System</h1>
+  <!--a href="/logout"><button type="button">Logout</button></a-->
+</center>
+<div class="center">
+    <h1 style="color:white;">{{title}}</h1>
+    <img src='{{poster}}'></img>
+    <h4 style="color:white;">RATING:{{ratingValue}}</h4>
+    <h4 style="color:white;">COUNT:{{ratingCount}}</h4>
+    <h4 style="color:white;">YEAR:{{year}}</h4>
+    <h4 style="color:white;">RELEASED:{{released}}</h4>
+    <h4 style="color:white;">RUNTIME:{{runtime}}</h4>
+    <h4 style="color:white;">PLOT:</br>{{plot}}</h4>
+
+</div>
+</br>
+<br/>
+
+  <center>
+    <h2 style="color:white;">USER REVIEWS</h2>
+     <div class="col-md-12" style="margin: 0 auto; margin-top:25px;">
+        <table class="table table-bordered" style="width:50%">
+            <thead>
+                <tr  style="background-color:#e5091485;">
+                  <th class="text-center" scope="col" >Comments</th>
+                </tr>
+            </thead>
+          <tbody>
+	    {% for review in reviews %}
+    	        <tr>
+                <td  style="background-color:#f1b3b685;">{{review}}</td>
+            	</tr>
+      	    {% endfor %}
+    		  </tbody>
+ 		    </table>
+     </div>
+  </center>
+  <center>
+  <div class="movie-content">
+  <h2 style="color:white;">SIMILAR MOVIES RECOMMENDATION</h2>
+  <div class="row">
+    {% for rec_title,rec_poster in rec_movies.items() if not rec_movies.hidden %}
+    <div class="column" style="width:33.33%">
+    <div class="box">
+      <div class="ontop">
+        <h6>{{rec_title}}</h6>
+        <form  action="/recommend" method="POST">
+        <div class="container">
+        <img  src="{{rec_poster}}" class="image" ></img>
+        <div class="middle">
+    <button class="btn">Details</button>
+  </div>
+  </div>
+        <input type="hidden" name="myTitle" value="{{rec_title}}" />  
+        </br>
+        
+        </form>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+  </div> 
+</div>
+  </center>
+</body>

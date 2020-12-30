@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup-style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
+</head>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background: #000;
+}
+
+.background{
+    background: url("../static/images/1.jpg") no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+
+.text{
+    margin-top: 40vh;
+    flex: 1;
+}
+
+.box{
+    margin-top: 33vh;
+    flex: 1;
+}
+
+.text{
+    margin-left: 10%;
+    font-weight: 300px;
+}
+
+.box{
+    margin-left: 25%;
+}
+
+.text h1{
+    font-size: 90px;
+    color: #3e4444;
+    font-weight: 500;
+}
+
+.text p{
+    font-size: 20px;
+    color: #3e4444;
+    font-weight: 500;
+}
+
+.text p a{
+    color: #fff;
+    font-weight: 700;
+}
+
+.form{
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+input{
+    margin: 20px 0;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color:#3e4444;
+    font-family: 'Raleway', sans-serif;
+}
+
+.username, .password, .fullname, .email{
+    border-bottom: 1px solid#3e4444;;
+}
+
+.btn{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.btn:hover{
+    background: #fff;
+    color: #000;
+}
+
+
+
+</style>
+<body>
+    <main>
+        <div class="background">
+            <div class="text">
+                <h1>Signup</h1>
+                <p>Have Account? <a href="/login2">Login</a></p>
+                <p>Have a movie in mind? <a href="/search">Click here to search!</a>
+            </div>
+            <div class="box">
+                <form class="form" action="{{ url_for('signup')}}"  method=POST>
+                    <input type="text" class="fullname" name ="fullname" placeholder="Full Name" required>
+                    <input type="email" class="email" name ="email" placeholder="someone@abc.com" required>
+                    <input type="text" class="username" name = "username" placeholder="Username" required>
+                    <input type="password" class="password" name = "pass" placeholder="Password" required>
+                    <button class="btn" type="submit" >Sign up</button>
+                    
+                </form>
+                {% if error %}
+                    <p class="error"><strong>Oops!</strong> {{ error }}
+                {% endif %}
+            </div>
+        </div>
+    </main>
+</body>
+    <script src="static/login.js"></script>
+</html>
