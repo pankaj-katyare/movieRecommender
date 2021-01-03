@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Signup</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/signup-style.css') }}">
@@ -115,10 +116,11 @@ input{
             </div>
             <div class="box">
                 <form class="form" action="{{ url_for('signup')}}"  method=POST>
-                    <input type="text" class="fullname" name ="fullname" placeholder="Full Name" required>
-                    <input type="email" class="email" name ="email" placeholder="someone@abc.com" required>
-                    <input type="text" class="username" name = "username" placeholder="Username" required>
-                    <input type="password" class="password" name = "pass" placeholder="Password" required>
+                    <input type="text" class="fullname" 
+                           placeholder="Full Name" required>
+                    <input type="email" class="email" placeholder="someone@abc.com" required>
+                    <input type="text" class="username" name = "username" placeholder="Username" pattern="[a-zA-Z0-9_-]{6,12}" autofocus required title="must be alphanumeric in 6-12 chars">
+                    <input type="password" class="password" name = "pass" placeholder="Password" pattern="[a-zA-Z0-9_-]{8,15}" autofocus required title="must be alphanumeric in 8-15 chars">
                     <button class="btn" type="submit" >Sign up</button>
                     
                 </form>
